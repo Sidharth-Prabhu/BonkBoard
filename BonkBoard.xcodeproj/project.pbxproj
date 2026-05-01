@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		421DA5972FA4EE0C00A3DCF5 /* BonkBoardIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 421DA5962FA4EE0C00A3DCF5 /* BonkBoardIcon.icon */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		421DA55E2FA4D30400A3DCF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +31,25 @@
 		421DA5502FA4D30300A3DCF5 /* BonkBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonkBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		421DA55D2FA4D30400A3DCF5 /* BonkBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonkBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		421DA5672FA4D30400A3DCF5 /* BonkBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonkBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		421DA5962FA4EE0C00A3DCF5 /* BonkBoardIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = BonkBoardIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		421DA5992FA4EE4C00A3DCF5 /* Exceptions for "BonkBoard" folder in "BonkBoard" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 421DA54F2FA4D30300A3DCF5 /* BonkBoard */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		421DA5522FA4D30300A3DCF5 /* BonkBoard */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				421DA5992FA4EE4C00A3DCF5 /* Exceptions for "BonkBoard" folder in "BonkBoard" target */,
+			);
 			path = BonkBoard;
 			sourceTree = "<group>";
 		};
@@ -79,6 +97,7 @@
 				421DA5602FA4D30400A3DCF5 /* BonkBoardTests */,
 				421DA56A2FA4D30400A3DCF5 /* BonkBoardUITests */,
 				421DA5512FA4D30300A3DCF5 /* Products */,
+				421DA5962FA4EE0C00A3DCF5 /* BonkBoardIcon.icon */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421DA5972FA4EE0C00A3DCF5 /* BonkBoardIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +412,9 @@
 		421DA5722FA4D30400A3DCF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BonkBoardIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -403,6 +424,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BonkBoard/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -424,8 +446,9 @@
 		421DA5732FA4D30400A3DCF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BonkBoardIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -435,6 +458,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BonkBoard/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
