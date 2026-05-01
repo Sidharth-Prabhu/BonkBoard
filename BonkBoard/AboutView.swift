@@ -59,13 +59,13 @@ struct AboutView: View {
 
             // Action Links
             HStack(spacing: 20) {
-                if let websiteURL = URL(string: "https://example.com/bonkboard") {
-                    Link("Website", destination: websiteURL)
+                if let websiteURL = URL(string: "https:bonkboard.sidharthprabhu.co.in") {
+                    Link("Visit Website", destination: websiteURL)
                 }
 
-                if let supportURL = URL(string: "mailto:support@example.com") {
-                    Link("Support", destination: supportURL)
-                }
+//                if let supportURL = URL(string: "mailto:mailtosidharth.me@gmail.com") {
+//                    Link("Support", destination: supportURL)
+//                }
             }
             .font(.callout)
             .padding(.top, 4)
