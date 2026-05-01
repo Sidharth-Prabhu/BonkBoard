@@ -1,0 +1,80 @@
+{
+  "source": "/Users/sidharth/development/BonkBoard/BonkBoard/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Tap Speed sets the gesture timing window for Mac body taps.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "The selected hold key is used to arm Knock gestures. Choose None to allow knocks without a key.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 113
+        }
+      },
+      {
+        "comment": "",
+        "key": "How much force is needed",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "Less sensitive",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 86
+        }
+      },
+      {
+        "comment": "",
+        "key": "More sensitive",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "Shortcut name",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Application name, for example Safari",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "Shell command",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@  •  %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 169
+        }
+      }
+    ]
+  },
+  "version": 1
+}

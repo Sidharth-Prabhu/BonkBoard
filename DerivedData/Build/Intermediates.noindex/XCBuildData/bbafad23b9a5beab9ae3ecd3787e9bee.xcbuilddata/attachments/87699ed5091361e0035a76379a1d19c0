@@ -1,0 +1,99 @@
+{
+  "" : {
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoard-primary.dia",
+    "emit-module-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoard-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoard-primary-emit-module.dia",
+    "pch" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoard-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoard-primary.swiftdeps"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/ActionRunner.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ActionRunner~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/AppSettings.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppSettings~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/AppleSiliconImpactMonitor.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/AppleSiliconImpactMonitor~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/BonkBoardApp.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardApp~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/BonkBoardController.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/BonkBoardController~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/ContentView.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/KeyboardModifierMonitor.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KeyboardModifierMonitor~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/BonkBoard/KnockGestureCoordinator.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/KnockGestureCoordinator~partial.swiftmodule"
+  },
+  "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/sidharth/development/BonkBoard/DerivedData/Build/Intermediates.noindex/BonkBoard.build/Debug/BonkBoard.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

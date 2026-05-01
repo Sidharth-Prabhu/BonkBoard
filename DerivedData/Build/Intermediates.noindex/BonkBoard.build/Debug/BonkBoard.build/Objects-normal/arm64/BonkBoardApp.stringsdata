@@ -1,0 +1,88 @@
+{
+  "source": "/Users/sidharth/development/BonkBoard/BonkBoard/BonkBoardApp.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "BonkBoard",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 16
+        }
+      },
+      {
+        "comment": "",
+        "key": "BonkBoard",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 34
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quit BonkBoard",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ | %@",
+        "location": {
+          "startingColumn": 14,
+          "startingLine": 90
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enabled",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sound Feedback",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open BonkBoard Settings",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap Speed",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 75
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hold Key",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quit BonkBoard",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 95
+        }
+      }
+    ]
+  },
+  "version": 1
+}
