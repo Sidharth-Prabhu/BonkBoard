@@ -175,12 +175,13 @@ struct ContentView: View {
                 .foregroundStyle(.secondary)
 
             if let acceleration = impactMonitor.latestAcceleration {
-                Text(String(format: "x %.2fg   y %.2fg   z %.2fg   spike %.3fg   threshold %.3fg",
-                            acceleration.x,
-                            acceleration.y,
-                            acceleration.z,
-                            impactMonitor.latestSpike,
-                            settings.impactThreshold))
+                let telemetry = String(format: "x %.2fg   y %.2fg   z %.2fg   spike %.3fg   threshold %.3fg",
+                                       acceleration.x,
+                                       acceleration.y,
+                                       acceleration.z,
+                                       impactMonitor.latestSpike,
+                                       settings.impactThreshold)
+                Text(telemetry)
                     .font(.system(.caption, design: .monospaced))
                     .foregroundStyle(.secondary)
             }
@@ -221,15 +222,16 @@ private struct Sidebar: View {
                 Button {
                     selectedSection = section
                 } label: {
+                    let isSelected = (selectedSection == section)
                     Label(section.title, systemImage: section.icon)
                         .font(.system(size: 18, weight: .semibold))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 18)
                         .padding(.vertical, 12)
-                        .foregroundStyle(selectedSection == section ? .primary : .secondary)
+                        .foregroundStyle(isSelected ? .primary : .secondary)
                         .background(
                             Capsule()
-                                .fill(selectedSection == section ? Color.blue.opacity(0.22) : Color.secondary.opacity(0.12))
+                                .fill(isSelected ? Color.blue.opacity(0.22) : Color.secondary.opacity(0.12))
                         )
                 }
                 .buttonStyle(.plain)

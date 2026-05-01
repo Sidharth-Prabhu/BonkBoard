@@ -26,11 +26,17 @@ final class KnockGestureCoordinator: ObservableObject {
         let now = Date()
         knockDates.append(now)
         knockDates = knockDates.filter { now.timeIntervalSince($0) <= settings.tapSpeed.interval }
-        lastGestureText = "\(min(knockDates.count, 3)) knock\(knockDates.count == 1 ? "" : "s")..."
+
+        let count = min(knockDates.count, 3)
+        lastGestureText = "\(count) knock\(count == 1 ? "" : "s")..."
+
+        // After 2 knocks, wait a shorter grace window for a potential third
+        let tripleGrace = settings.tapSpeed.interval * 0.35
+        let delay: TimeInterval = (count >= 2) ? tripleGrace : settings.tapSpeed.interval
 
         recognitionTask?.cancel()
         recognitionTask = Task { [weak self] in
-            try? await Task.sleep(for: .seconds(settings.tapSpeed.interval))
+            try? await Task.sleep(for: .seconds(delay))
 
             guard !Task.isCancelled else { return }
 

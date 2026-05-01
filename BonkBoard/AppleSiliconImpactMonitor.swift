@@ -34,6 +34,11 @@ final class AppleSiliconImpactMonitor: ObservableObject {
     private var lastImpactDate = Date.distantPast
     private var clearImpactTask: Task<Void, Never>?
     private var isMonitoring = false
+
+    private var lastUIPublishDate = Date.distantPast
+    private let uiPublishInterval: TimeInterval = 1.0 / 30.0 // 30 Hz cap
+    private let spikeEpsilon: Double = 0.002 // only publish meaningful changes
+
     private var impactThreshold = 0.052
 
     func start() {
@@ -139,8 +144,6 @@ final class AppleSiliconImpactMonitor: ObservableObject {
             z: scaledInt32(from: report, offset: ImpactSensorConstants.imuDataOffset + 8)
         )
 
-        latestAcceleration = acceleration
-
         let spike = previousAcceleration.map { previous in
             let dx = acceleration.x - previous.x
             let dy = acceleration.y - previous.y
@@ -150,7 +153,17 @@ final class AppleSiliconImpactMonitor: ObservableObject {
             return max(axisSpike, vectorSpike * 0.6)
         } ?? 0
 
-        latestSpike = spike
+        // Coalesce UI updates to reduce main-thread churn
+        let now = Date()
+        let shouldPublishTime = now.timeIntervalSince(lastUIPublishDate) >= uiPublishInterval
+        let shouldPublishChange = abs(spike - latestSpike) >= spikeEpsilon || latestAcceleration == nil
+
+        if shouldPublishTime && shouldPublishChange {
+            latestAcceleration = acceleration
+            latestSpike = spike
+            lastUIPublishDate = now
+        }
+
         previousAcceleration = acceleration
 
         if spike >= impactThreshold,
@@ -240,7 +253,7 @@ private enum ImpactSensorConstants {
     static let imuReportLength = 22
     static let imuDataOffset = 6
     static let valueScale = 65_536.0
-    static let reportIntervalMicroseconds: Int32 = 1_000
+    static let reportIntervalMicroseconds: Int32 = 16_000
     static let impactCooldown = 0.25
     static let impactVisibleDuration = 2.0
 }
