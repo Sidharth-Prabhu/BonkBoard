@@ -1,10 +1,3 @@
-//
-//  BonkBoardApp.swift
-//  BonkBoard
-//
-//  Created by Sidharth Prabhu on 2026-05-01.
-//
-
 import SwiftUI
 
 @main
@@ -13,6 +6,7 @@ struct BonkBoardApp: App {
     @StateObject private var controller = BonkBoardController()
 
     var body: some Scene {
+        // SETTINGS WINDOW
         WindowGroup("BonkBoard", id: "settings") {
             ContentView(controller: controller)
                 .task {
@@ -22,7 +16,22 @@ struct BonkBoardApp: App {
                     NSApp.keyWindow?.identifier = NSUserInterfaceItemIdentifier("BonkBoardSettingsWindow")
                 }
         }
+
+        // ✅ NEW: ABOUT WINDOW
+        Window("About BonkBoard", id: "about") {
+            AboutView()
+                .frame(minWidth: 420, idealWidth: 480, minHeight: 360)
+        }
+        .windowResizability(.contentSize)
+
+        // MENU CUSTOMIZATION
         .commands {
+            CommandGroup(replacing: .appInfo) {
+                Button("About BonkBoard") {
+                    AboutPanelController.shared.show()
+                }
+            }
+
             CommandGroup(replacing: .appTermination) {
                 Button("Quit BonkBoard") {
                     controller.quit()
@@ -31,6 +40,7 @@ struct BonkBoardApp: App {
             }
         }
 
+        // MENU BAR
         MenuBarExtra("BonkBoard", systemImage: controller.settings.isEnabled ? "hand.tap.fill" : "hand.tap") {
             MenuBarControls(controller: controller)
         }
@@ -94,6 +104,17 @@ private struct MenuBarControls: View {
 
         Button("Quit BonkBoard") {
             controller.quit()
+        }
+    }
+}
+
+// ✅ NEW: Dedicated About command
+private struct AboutCommand: View {
+    @Environment(\.openWindow) private var openWindow
+
+    var body: some View {
+        Button("About BonkBoard") {
+            openWindow(id: "about")
         }
     }
 }

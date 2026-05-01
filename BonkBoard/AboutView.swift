@@ -2,6 +2,7 @@ import SwiftUI
 import AppKit
 
 struct AboutView: View {
+
     private var appName: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
         ?? (Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String)
@@ -15,49 +16,70 @@ struct AboutView: View {
     }
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 20) {
+
+            // App Icon
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 96, height: 96)
-                .cornerRadius(20)
-                .shadow(color: .black.opacity(0.15), radius: 10, y: 6)
+                .frame(width: 68, height: 88)
+                .cornerRadius(18)
+                .shadow(color: .black.opacity(0.15), radius: 8, y: 4)
 
+            // App Name
             Text(appName)
-                .font(.system(size: 24, weight: .bold))
+                .font(.system(size: 26, weight: .bold))
 
+            // Version
             Text(versionString)
                 .font(.callout)
                 .foregroundStyle(.secondary)
 
+            // Description
             Text("BonkBoard detects gentle taps on your Mac and turns them into actions. Configure sensitivity, timing, and gestures to make it yours.")
                 .multilineTextAlignment(.center)
                 .font(.callout)
                 .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
-                .padding(.top, 4)
+                .padding(.horizontal, 12)
 
-            Divider()
-                .padding(.vertical, 4)
+            // Developer Section
+            VStack(spacing: 6) {
+                Text("Developed by")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
 
-            HStack(spacing: 16) {
+                Text("Sidharth P L")
+                    .font(.headline)
+
+                // 🔗 Portfolio Link (CHANGE THIS URL)
+                Link("Contact Developer", destination: URL(string: "https://sidharthprabhu.co.in")!)
+                    .font(.callout)
+            }
+            .padding(.top, 6)
+
+            // Action Links
+            HStack(spacing: 20) {
                 if let websiteURL = URL(string: "https://example.com/bonkboard") {
                     Link("Website", destination: websiteURL)
                 }
+
                 if let supportURL = URL(string: "mailto:support@example.com") {
                     Link("Support", destination: supportURL)
                 }
             }
             .font(.callout)
+            .padding(.top, 4)
 
-            Spacer(minLength: 0)
+            Spacer()
 
-            Text("© \(Calendar.current.component(.year, from: Date())) BonkBoard. All rights reserved.")
+            // Footer
+            Text("© \(Calendar.current.component(.year, from: Date())) BonkBoard")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
-        .padding(24)
-        .frame(minWidth: 420, idealWidth: 480, minHeight: 360)
+        .padding(28)
+        .frame(width: 480, height: 360)
+        .background(.ultraThinMaterial)
     }
 }
 

@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  BonkBoard
-//
-//  Created by Sidharth Prabhu on 2026-05-01.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -25,39 +18,47 @@ struct ContentView: View {
     }
 
     var body: some View {
-        HStack(spacing: 0) {
+        NavigationSplitView {
             Sidebar(selectedSection: $selectedSection)
-
-            Divider()
-                .opacity(0)
-
+        } detail: {
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading, spacing: 28) {
                     selectedContent
-                    liveStatus
+                    statusCard
                 }
-                .frame(maxWidth: 680, alignment: .leading)
                 .padding(32)
+                .frame(maxWidth: 720, alignment: .leading)
             }
+            .background(Color(nsColor: .windowBackgroundColor))
         }
-        .frame(minWidth: 820, minHeight: 540)
-        .background(Color(nsColor: .windowBackgroundColor))
+        .frame(minWidth: 900, minHeight: 560)
     }
 
     @ViewBuilder
     private var selectedContent: some View {
         switch selectedSection {
         case .general:
-            generalSettings
+            settingsCard { generalSettings }
         case .detection:
-            detectionSettings
+            settingsCard { detectionSettings }
         case .gestures:
-            gestureSettings
+            settingsCard { gestureSettings }
         }
     }
 
-    private var generalSettings: some View {
+    private func settingsCard<Content: View>(@ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 20) {
+            content()
+        }
+        .padding(24)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(Color(nsColor: .controlBackgroundColor))
+        )
+    }
+
+    private var generalSettings: some View {
+        VStack(alignment: .leading, spacing: 16) {
             SectionHeader(title: "General", subtitle: "App behavior and launch options")
 
             SettingsToggle(title: "Enabled", isOn: $settings.isEnabled)
@@ -69,57 +70,39 @@ struct ContentView: View {
                 Text(controller.appMessage)
                     .font(.callout)
                     .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
             }
         }
     }
 
     private var detectionSettings: some View {
-        VStack(alignment: .leading, spacing: 22) {
-            SectionHeader(title: "Detection", subtitle: "Sensitivity, timing, and hold key")
+        VStack(alignment: .leading, spacing: 20) {
+            SectionHeader(title: "Detection", subtitle: "Sensitivity and timing")
 
-            VStack(alignment: .leading, spacing: 10) {
-                Text("How much force is needed")
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Sensitivity")
                     .font(.headline)
 
-                HStack {
-                    Text("Less sensitive")
-                    Spacer()
-                    Text("More sensitive")
-                }
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.secondary)
-
                 Slider(value: $settings.sensitivity, in: 0...1)
-                    .tint(.blue)
+                    .controlSize(.large)
             }
 
             PickerRow(title: "Tap Speed", selection: $settings.tapSpeed) {
-                ForEach(TapSpeed.allCases) { speed in
-                    Text(speed.title).tag(speed)
+                ForEach(TapSpeed.allCases) {
+                    Text($0.title).tag($0)
                 }
             }
 
-            Text("Tap Speed sets the gesture timing window for Mac body taps.")
-                .font(.callout)
-                .foregroundStyle(.secondary)
-
-            PickerRow(title: "Hold key for Knock and Trackpad Tap Mode", selection: $settings.holdKey) {
-                ForEach(HoldKey.allCases) { key in
-                    Text(key.title).tag(key)
+            PickerRow(title: "Hold Key", selection: $settings.holdKey) {
+                ForEach(HoldKey.allCases) {
+                    Text($0.title).tag($0)
                 }
             }
-
-            Text("The selected hold key is used to arm Knock gestures. Choose None to allow knocks without a key.")
-                .font(.callout)
-                .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
         }
     }
 
     private var gestureSettings: some View {
-        VStack(alignment: .leading, spacing: 22) {
-            SectionHeader(title: "Gestures", subtitle: "Assign actions to Mac body knocks")
+        VStack(alignment: .leading, spacing: 20) {
+            SectionHeader(title: "Gestures", subtitle: "Assign actions")
 
             ActionPicker(title: "Single Knock", selection: $settings.singleKnockAction)
             ActionPicker(title: "Double Knock", selection: $settings.doubleKnockAction)
@@ -131,84 +114,76 @@ struct ContentView: View {
 
     @ViewBuilder
     private var actionConfigurationFields: some View {
-        let selectedActions = [
-            settings.singleKnockAction,
-            settings.doubleKnockAction,
-            settings.tripleKnockAction
-        ]
+        if settings.singleKnockAction.needsShortcutName ||
+            settings.doubleKnockAction.needsShortcutName ||
+            settings.tripleKnockAction.needsShortcutName {
 
-        if selectedActions.contains(where: \.needsShortcutName) {
             TextField("Shortcut name", text: $settings.shortcutName)
-                .textFieldStyle(.roundedBorder)
         }
 
-        if selectedActions.contains(where: \.needsAppName) {
-            TextField("Application name, for example Safari", text: $settings.appName)
-                .textFieldStyle(.roundedBorder)
+        if settings.singleKnockAction.needsAppName ||
+            settings.doubleKnockAction.needsAppName ||
+            settings.tripleKnockAction.needsAppName {
+
+            TextField("Application name", text: $settings.appName)
         }
 
-        if selectedActions.contains(where: \.needsCustomCommand) {
+        if settings.singleKnockAction.needsCustomCommand ||
+            settings.doubleKnockAction.needsCustomCommand ||
+            settings.tripleKnockAction.needsCustomCommand {
+
             TextField("Shell command", text: $settings.customCommand)
-                .textFieldStyle(.roundedBorder)
         }
     }
 
-    private var liveStatus: some View {
+    private var statusCard: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 10) {
+            HStack {
                 Circle()
-                    .fill(impactMonitor.impactDetected ? Color.red : Color.green)
+                    .fill(impactMonitor.impactDetected ? .red : .green)
                     .frame(width: 10, height: 10)
-                    .overlay(
-                        Circle().strokeBorder(.white.opacity(0.6))
-                    )
-
-                Image(systemName: impactMonitor.impactDetected ? "exclamationmark.triangle.fill" : "waveform.path.ecg")
-                    .foregroundStyle(impactMonitor.impactDetected ? .red : .blue)
 
                 Text(impactMonitor.impactDetected ? "Impact detected" : impactMonitor.statusText)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(.headline)
+
+                Spacer()
             }
 
-            Text("\(gestureCoordinator.lastGestureText)  •  \(actionRunner.lastActionText)")
-                .font(.callout)
+            Text("\(gestureCoordinator.lastGestureText) • \(actionRunner.lastActionText)")
+                .font(.subheadline)
                 .foregroundStyle(.secondary)
 
-            if let acceleration = impactMonitor.latestAcceleration {
-                let telemetry = String(format: "x %.2fg   y %.2fg   z %.2fg   spike %.3fg   threshold %.3fg",
-                                       acceleration.x,
-                                       acceleration.y,
-                                       acceleration.z,
-                                       impactMonitor.latestSpike,
-                                       settings.impactThreshold)
-                Text(telemetry)
-                    .font(.system(.caption, design: .monospaced))
+            if let a = impactMonitor.latestAcceleration {
+                Text(String(format: "x %.2f  y %.2f  z %.2f", a.x, a.y, a.z))
+                    .font(.caption.monospaced())
                     .foregroundStyle(.secondary)
             }
         }
+        .padding(18)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color(nsColor: .controlBackgroundColor))
+        )
     }
 }
 
 private enum SettingsSection: String, CaseIterable, Identifiable {
-    case general
-    case detection
-    case gestures
-
+    case general, detection, gestures
     var id: String { rawValue }
 
     var title: String {
         switch self {
-        case .general: "General"
-        case .detection: "Detection"
-        case .gestures: "Gestures"
+        case .general: return "General"
+        case .detection: return "Detection"
+        case .gestures: return "Gestures"
         }
     }
 
     var icon: String {
         switch self {
-        case .general: "gearshape"
-        case .detection: "slider.horizontal.3"
-        case .gestures: "hand.tap"
+        case .general: return "gearshape"
+        case .detection: return "slider.horizontal.3"
+        case .gestures: return "hand.tap"
         }
     }
 }
@@ -217,31 +192,23 @@ private struct Sidebar: View {
     @Binding var selectedSection: SettingsSection
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        List {
             ForEach(SettingsSection.allCases) { section in
                 Button {
                     selectedSection = section
                 } label: {
-                    let isSelected = (selectedSection == section)
                     Label(section.title, systemImage: section.icon)
-                        .font(.system(size: 18, weight: .semibold))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 18)
-                        .padding(.vertical, 12)
-                        .foregroundStyle(isSelected ? .primary : .secondary)
-                        .background(
-                            Capsule()
-                                .fill(isSelected ? Color.blue.opacity(0.22) : Color.secondary.opacity(0.12))
-                        )
                 }
                 .buttonStyle(.plain)
+                .padding(.vertical, 4)
+                .background(
+                    RoundedRectangle(cornerRadius: 6)
+                        .fill(selectedSection == section ? Color.accentColor.opacity(0.15) : .clear)
+                )
             }
-
-            Spacer()
         }
-        .padding(.top, 62)
-        .padding(.horizontal, 22)
-        .frame(width: 286)
+        .listStyle(.sidebar)
     }
 }
 
@@ -250,16 +217,13 @@ private struct SectionHeader: View {
     let subtitle: String
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 3) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(title)
-                .font(.system(size: 28, weight: .bold))
+                .font(.title2.bold())
+
             Text(subtitle)
-                .font(.system(size: 18, weight: .semibold))
+                .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Rectangle()
-                .fill(Color.primary.opacity(0.06))
-                .frame(height: 1)
-                .padding(.top, 8)
         }
     }
 }
@@ -270,8 +234,7 @@ private struct SettingsToggle: View {
 
     var body: some View {
         Toggle(title, isOn: $isOn)
-            .toggleStyle(.checkbox)
-            .font(.system(size: 22, weight: .semibold))
+            .toggleStyle(.switch)
     }
 }
 
@@ -281,15 +244,11 @@ private struct PickerRow<Selection: Hashable, Content: View>: View {
     @ViewBuilder let content: () -> Content
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        HStack {
             Text(title)
-                .font(.headline)
-
-            Picker(title, selection: $selection, content: content)
+            Spacer()
+            Picker("", selection: $selection, content: content)
                 .pickerStyle(.menu)
-                .labelsHidden()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .controlSize(.large)
         }
     }
 }
@@ -300,8 +259,8 @@ private struct ActionPicker: View {
 
     var body: some View {
         PickerRow(title: title, selection: $selection) {
-            ForEach(KnockAction.allCases) { action in
-                Text(action.title).tag(action)
+            ForEach(KnockAction.allCases) {
+                Text($0.title).tag($0)
             }
         }
     }
